@@ -1,0 +1,29 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+
+.jumbotron {
+    height: 500px;
+    background-image: url('jumbotron-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container img {
+    max-width: 100%;
+}
+
+.featured {
+    max-width: 600px;
+}
+
+.featured a {
+    color: rgb(200,200,255);
+}
+
+.transparent-dark {
+    color: rgb(255,255,255);
+    background-color: rgba(0,0,0,0.5);
+}
+
+@import "bootstrap";
