@@ -1,6 +1,20 @@
-<h3>Edit Comment: </h3>
+<div class="container mt-5 pt-5 mb-5">
+<h1>Edit Comment: </h1>
+<h2>Make changes to your comment here.</h2>
+
 <%= form_for [@article, @comment] do |f| %>
-<%= f.label :body %>
-<%= f.text_area :body %>
-<%= f.submit %>
+
+<div class="field">
+<%= f.text_area :body, class: "input-group-text", style: "width: 100%; min-height: 200px; text-align: left; wrap; hard" %>
+</div>
+<div class="actions">
+<%= f.submit 'Save Changes', class: 'btn btn-outline-primary btn-sm mt-3 mb-5' %>
+</div>
 <% end %>
+</div>
+
+
+
+ 
+
+

@@ -1,6 +1,7 @@
 <div class="container mt-5 pt-5 mb-5">
 <p id="notice"><%= notice %></p>
 
+<% if user_signed_in? %>
 <h1>
   <%= @article.title %>
 </h1>
@@ -9,14 +10,17 @@
   <%= @markdown.render(@article.body).html_safe %>
 </p>
 
+
 <hr>
 <h6>Comments:</h6>
 <% @article.comments.each do |comment| %>
 <%= comment.body %>
-<%= link_to "Edit Comment", edit_article_comment_path(@article, comment) %>
-<%= link_to "Delete Comment", article_comment_path(@article, comment),
-  method: :delete,  
-  data: { confirm: "Are you sure you want to delete #{comment.body}?" } %>
+  <% if comment.user_id == current_user.id %>
+    <%= link_to "Edit Comment", edit_article_comment_path(@article, comment) %>
+    <%= link_to "Delete Comment", article_comment_path(@article, comment),
+      method: :delete,  
+      data: { confirm: "Are you sure you want to delete #{comment.body}?" } %>
+  <% end %>
 <br>
 <% end %>
 <hr>
@@ -25,7 +29,19 @@
 <%= f.submit "add comment", class: "btn btn-outline-primary my-2" %>
 <% end %>
 
+<% if @article.user_id == current_user.id %>
 <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary btn-sm" %>
+<%= link_to 'Delete', article_path(@article),
+  method: :delete,
+  data: {confirm: "Are you sure you want to delete '#{@article.title}'?" },
+  class: 'btn btn-outline-danger btn-sm' %>
+<% end %> 
 <%= link_to 'Back', articles_path, class: "btn btn-outline-primary btn-sm" %>
 
 </div>
+
+<% else %>
+<div> You need to sign in to see articles </div>
+
+<% end %>
+

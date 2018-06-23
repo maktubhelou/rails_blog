@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id].to_i)
     @articles = Article.all
     @comment = @article.comments.build(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save 
       redirect_to @article
     else
