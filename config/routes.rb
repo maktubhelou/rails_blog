@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  root 'articles#index'
+  get 'articles/index'
+  get 'comments/create'
+  get 'comments/destroy'
   resources :articles do
-    post 'search', :on => :collection
+    resources :comments
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root:to => 'articles#index'
 end

@@ -4,7 +4,7 @@
 
 Submitted by: **Mark Evans**
 
-Time spent: **1** hours spent in total
+Time spent: **4** hours spent in total
 
 URL: 
 
@@ -22,7 +22,7 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 * [√] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. 
 * [ ] User can see how many views an article has. 
-* [ ] User can leave a comment on an article.
+* [√] User can leave a comment on an article.
 * [ ] User can add "tags" to an article, and filter articles by tag. 
 
 The following **additional** features are implemented:
