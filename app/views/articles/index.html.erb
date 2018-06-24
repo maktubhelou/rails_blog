@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-    <div class="jumbotron jumbotron-fluid">
-    <h1 class="p-3 pl-5">Mark&apos;s Cool Blog</h1>
-    <h3 class="p-3 pl-5">The coolest blog you&apos;ve never seen</h3>
+<div class="jumbotron jumbotron-fluid my-5">
+<div class="container-fluid">
+<h1 class="display-4 p-3 pl-5">Mark&apos;s Cool Blog</h1>
+<h3 class="p-3 pl-5">The coolest blog you&apos;ve never seen</h3>
     <div class="lead p-3 featured transparent-dark ml-5">Newest Article: <%= link_to @featured.title, article_path(@featured) %>
         <p><%= link_to truncate(@featured.body, :length => 250, :omission => '... (continued)'), article_path(@featured), style: "color: white; text-decoration: none" %></p>
     </div>
-    </div>
+</div>
+</div>
 
-<div class="container mb-5">
+<div class="container mb-5 pb-5">
 <% if user_signed_in? %>
     <%= render @articles %>
     <br>

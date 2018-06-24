@@ -28,6 +28,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
+
 - [ ] Fix the style of the search bar so it appears fine even when collapses
 - [ ] Fix the navbar at the bottom so that it opens properly (but add icons first anyway)
 - [ ] Add 'created by' to each article post
