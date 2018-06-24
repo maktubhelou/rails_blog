@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @tag_list = :tag_list
     @featured = Article.last
 
     if params[:search]
@@ -84,6 +85,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :tag_list)
     end
 end

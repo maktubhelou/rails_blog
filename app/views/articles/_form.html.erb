@@ -20,6 +20,13 @@
     <%= form.label :body %>
     <%= form.text_area :body, class: "input-group-text", style: "width: 100%; min-height: 400px; text-align: left; wrap: hard" %>
   </div>
+  
+  <div class="field">
+    <%= form.label :tag_list %>
+    <%= form.text_area :tag_list, 
+      class: "input-group-text", 
+      style: "width: 100%; text-align: left; wrap: hard" %>
+  </div>
 
   <div class="actions">
     <%= form.submit 'confirm and submit', class: "btn btn-primary mt-3 mb-5" %>
