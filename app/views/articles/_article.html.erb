@@ -15,7 +15,8 @@
                     data: { confirm: "Are you sure you want to delete '#{article.title}'?" },  
                     class: 'btn btn-outline-danger btn-sm' %> 
               <% end %>
-            <p class="float-right">created <%= time_ago_in_words(article.created_at) %> ago</p>
+            <p class="badge badge-primary">views: <%= article.impressionist_count %></p>
+            <p class="badge badge-info">created <%= time_ago_in_words(article.created_at) %> ago</p>
           </div>
       </div>
   </div>

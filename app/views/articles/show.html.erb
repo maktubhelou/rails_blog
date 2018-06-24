@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5 py-5">
+<div class="container my-5 py-5">
 
 <p id="notice"><%= notice %></p>
 
@@ -38,6 +38,8 @@
   class: 'btn btn-outline-danger btn-sm' %>
 <% end %> 
 <%= link_to 'Back', articles_path, class: "btn btn-outline-primary btn-sm" %>
+<p class="badge badge-primary">views: <%= @article.impressionist_count %></p>
+
 
 
 <% else %>
