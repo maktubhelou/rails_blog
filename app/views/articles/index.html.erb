@@ -3,7 +3,7 @@
 <h1 class="display-4 p-3 pl-5">Mark&apos;s Cool Blog</h1>
 <h3 class="p-3 pl-5">The coolest blog you&apos;ve never seen</h3>
     <div class="lead p-3 featured transparent-dark ml-5">Newest Article: <%= link_to @featured.title, article_path(@featured) %>
-        <p><%= link_to truncate(@featured.body, :length => 250, :omission => '... (continued)'), article_path(@featured), style: "color: white; text-decoration: none" %></p>
+        <p><%= link_to truncate(strip_tags(@markdown.render(@featured.body)), :length => 200, :omission => '... (continued)'), article_path(@featured), style: "color: white; text-decoration: none" %></p>
     </div>
 </div>
 </div>
