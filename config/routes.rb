@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'articles#index'
   get 'articles/index'
   get 'comments/create'
   get 'comments/destroy'
