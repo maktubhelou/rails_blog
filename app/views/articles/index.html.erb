@@ -5,16 +5,26 @@
     <div class="lead p-3 featured transparent-dark ml-5">Newest Article: <%= link_to @featured.title, article_path(@featured) %>
         <p><%= link_to truncate(strip_tags(@markdown.render(@featured.body)), :length => 200, :omission => '... (continued)'), article_path(@featured), style: "color: white; text-decoration: none" %></p>
     </div>
+    <% if !user_signed_in? %>
+    <div id="sign-up-box" class="alert alert-primary" style="position: absolute; right: 150px; top: 150px; width: 400px; padding: 50px">
+        <div class="btn btn-outline-dark" onclick="closeSignUp()" style="position: absolute; top: 20px; right: 20px">X
+        </div>
+            <p>Sign up and log in for a better experience. After logging in, you can post as well as make comments.</p>
+            <a class="btn btn-lg btn-primary" href="<%= new_user_registration_path %>">Sign Up</a>
+            <a class="btn btn-lg btn-outline-primary" href="<%= new_user_session_path %>">Log In</a>
+    </div>
+    <% end %>
 </div>
 </div>
 
 <div class="container mb-5 pb-5 ">
-<% if user_signed_in? %>
     <div class="row">
         <div class="col-sm-8">
             <%= render @articles %>
             <br>
+            <% if user_signed_in? %>
             <%= link_to 'New Article', new_article_path, class: "btn btn-outline-primary btn-sm" %>
+            <% end %>
         </div>
         <div class="col-sm-4 p-3">
         <h3>Tag List</h3>
@@ -23,9 +33,12 @@
             <%= link_to tag, articles_path(:tags => tag.name), class: "btn btn-sm btn-outline-primary m-1" %>
             <% end %>
         </div>
+        </div>
     </div>
-<% else %>
-    <a class="nav-link" href="<%= new_user_registration_path %>">Sign Up</a>
-    <a class="nav-link" href="<%= new_user_session_path %>">Log In</a>
-<% end %>
 </div>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").style.color = "red";
+}
+</script>
