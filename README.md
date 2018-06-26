@@ -4,7 +4,7 @@
 
 Submitted by: **Mark Evans**
 
-Time spent: **4** hours spent in total
+Time spent: **6** hours spent in total
 
 URL: 
 
@@ -23,19 +23,15 @@ The following **optional** features are implemented:
 * [√] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/. 
 * [√] User can see how many views an article has. 
 * [√] User can leave a comment on an article.
-* [ ] User can add "tags" to an article, and filter articles by tag. 
+* [√] User can add "tags" to an article, and filter articles by tag. 
+- [√] must be signed in to comment.
 
-The following **additional** features are implemented:
+The following **additional** features will be implemented in future updates:
 
-- [ ] List anything else that you can get done to improve the app functionality!
-
-- [√] Fix the style of the search bar so it appears fine even when collapses
-- [√] Fix the navbar at the bottom so that it opens properly (but add icons first anyway)
 - [ ] Add 'created by' to each article post
 - [ ] Add Social Media sharing
 - [ ] add "clap" or "like" to each post
 - [ ] add comment by and avatar to each comment
-- [√] must be signed in to comment.
 
 ## Video Walkthrough 
 
