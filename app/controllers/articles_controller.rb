@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @tags = ActsAsTaggableOn::Tag.all
     @featured = Article.last
-    debugger
     if params[:search]
       @articles = Article.search(params[:search]).order("created_at DESC")
     elsif params[:tags]
