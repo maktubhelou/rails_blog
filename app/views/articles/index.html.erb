@@ -16,7 +16,12 @@
             <br>
             <%= link_to 'New Article', new_article_path, class: "btn btn-outline-primary btn-sm" %>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-4 p-3">
+        <h3>Tag List</h3>
+        <p> click on a tag to filter articles by that tag </p>
+            <% @tags.each do |tag| %>
+            <%= link_to tag, articles_path(:tags => tag.name), class: "btn btn-sm btn-outline-primary m-1" %>
+            <% end %>
         </div>
     </div>
 <% else %>

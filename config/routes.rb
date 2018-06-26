@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'articles#index'
   get 'articles/index'
   get 'comments/create'
   get 'comments/destroy'
+  devise_for :users
   resources :articles do
     resources :comments
   end

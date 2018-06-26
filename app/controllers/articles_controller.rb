@@ -5,11 +5,12 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    @tag_list = :tag_list
+    @tags = ActsAsTaggableOn::Tag.all
     @featured = Article.last
-
     if params[:search]
       @articles = Article.search(params[:search]).order("created_at DESC")
+    elsif params[:tags]
+      @articles = Article.all.tagged_with(params[:tags])
     else
       @articles = Article.all.order("created_at DESC")
     end
@@ -77,6 +78,10 @@ class ArticlesController < ApplicationController
     @article = Article.search(params[:search])
   end
 
+  def tags
+    @article = Article.tagged_with(:tags)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -85,6 +90,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body, :tag_list)
+      params.require(:article).permit(:title, :body, :tag_list, :tags)
     end
 end
