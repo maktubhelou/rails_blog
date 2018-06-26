@@ -15,9 +15,9 @@
 <hr>
 <h6>Comments:</h6>
 <% @article.comments.each do |comment| %>
-<%= comment.body %>
+<%= comment.body %> | commenter: <%= link_to comment.user.email %> |
   <% if comment.user_id == current_user.id %>
-    <%= link_to "Edit Comment", edit_article_comment_path(@article, comment) %>
+    <%= link_to "Edit Comment", edit_article_comment_path(@article, comment) %> |
     <%= link_to "Delete Comment", article_comment_path(@article, comment),
       method: :delete,  
       data: { confirm: "Are you sure you want to delete #{comment.body}?" } %>
@@ -39,6 +39,7 @@
 <% end %> 
 <%= link_to 'Back', articles_path, class: "btn btn-outline-primary btn-sm" %>
 <p class="badge badge-primary">views: <%= @article.impressionist_count %></p>
+<p class="badge badge-info">created by: <%= @article.user.email %></p>
 
 
 
