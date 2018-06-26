@@ -1,5 +1,6 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 
+
 .jumbotron {
     height: 500px;
     background-image: asset_url('jumbotron-bg.jpg');
@@ -27,3 +28,4 @@
 }
 
 @import "bootstrap";
+@import "font-awesome";

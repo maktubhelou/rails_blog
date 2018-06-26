@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.1.1'
 gem 'redcarpet'
 gem 'jquery-rails'
+gem "font-awesome-rails"
+
 
 gem 'devise'
 gem 'impressionist'
